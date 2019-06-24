@@ -14,10 +14,11 @@ host=server=node
 - `host_usage.sh` collects the host usage information (CPU and Memory).This script is executed every minute by a crontab job.
 
 ## Usage
- - On server one, the server that has a working PostgreSql database, execute `init.sql`.
+ - On server one, the server that has a working PostgreSql database, execute the commands that are on `init.sql`from the psql command prompt. E.g.: psql> create database host_agent;
  - Execute `host_info.sh` on all the hosts.
+        E.g.: `./path/host_info.sh database_ip 5432 host_agent database_user database_password`
  - Create a crontab job that executes the script `host_usage.sh` on each host.
     `crontab -e` (opens crontab editor)
     --Inside crontab editor type:
         `* * * * * path/host_usage.sh database_adress 5432 host_agent database_user database_password >  /tmp/host_usage.log`
-        -Substitute database_adress,database_user and database_password with the correct information of you cluster.
+        -Substitute database_ip,database_user and database_password with the correct information of you cluster.
