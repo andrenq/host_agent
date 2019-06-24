@@ -8,11 +8,13 @@ then
   HOST=localhost
   DATABASE=host_agent  
   USERNAME=postgres 
+  export PGPASSWORD=password
 else
   echo "Using parameters passed by the user: HOST=${1} , USERNAME=${2}, DATABASE=${3}"
   HOST=$1
   USERNAME=$2
-  DATABASE=$3  
+  DATABASE=$3
+  export PGPASSWORD=$4
 fi
 
 # Gathering Host INFO
