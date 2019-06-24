@@ -1,6 +1,5 @@
 #! /bin/bash
 #Database Connection
-export PGPASSWORD=password
 
 if [ -z $1]
 then
@@ -10,7 +9,7 @@ then
   USERNAME=postgres 
   export PGPASSWORD=password
 else
-  echo "Using parameters passed by the user: HOST=${1} , USERNAME=${2}, DATABASE=${3}"
+  echo "Using parameters passed by the user: HOST=${1} , USERNAME=${2}, DATABASE=${3},PASSWORD=***"
   HOST=$1
   USERNAME=$2
   DATABASE=$3
