@@ -1,20 +1,18 @@
 #! /bin/bash
-
 #Database Connection
-  #PGPASSWORD exported on bashrc
+export PGPASSWORD=password
+
 if [ -z $1]
 then
   echo "No parameters were passed. Using default values"
   HOST=localhost
   DATABASE=host_agent  
-  USERNAME=postgres
-  
+  USERNAME=postgres 
 else
+  echo "Using parameters passed by the user: HOST=${1} , USERNAME=${2}, DATABASE=${3}"
   HOST=$1
   USERNAME=$2
   DATABASE=$3  
-
-
 fi
 
 # Gathering Host INFO
