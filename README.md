@@ -15,7 +15,7 @@ host=server=node
 
 ## Usage
  - On server one, the server that has a working PostgreSql database, execute the commands that are on `init.sql`from the psql command prompt.
- --E.g.: `psql> create database host_agent;`
+ -E.g.: `psql> create database host_agent;`
  - Execute `host_info.sh` on all the hosts.
  -E.g.: `./path/host_info.sh database_ip 5432 host_agent database_user database_password`
  - Create a crontab job that executes the script `host_usage.sh` on each host.
